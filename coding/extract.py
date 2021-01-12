@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from Bio import AlignIO, Phylo
 from Bio.Phylo.TreeConstruction import *
@@ -6,7 +7,14 @@ from Bio.Phylo.Consensus import *
 
 def read_data():
     # read data from file
-    data = pd.read_excel('../Datenerhebung/spreadsheet.xlsx', sheet_name='Sheet2', index_col=0)
+    prev = ''
+    filepath = 'git/Seminararbeit-Balladen/Datenerhebung/spreadsheet.xlsx'
+    if not os.path.exists(filepath):
+        prev = filepath
+        filepath = '../Datenerhebung/spreadsheet.xlsx'
+    if not os.path.exists(filepath):
+        raise Exception(f'Could not find spreadsheet\n(checked: {[prev, filepath]})')
+    data = pd.read_excel('git/Seminararbeit-Balladen/Datenerhebung/spreadsheet.xlsx', sheet_name='Sheet2', index_col=0)
 
     # remove empty rows and columns
     cols = [0] + [c for c in data.columns if str(c).startswith('0.')]
