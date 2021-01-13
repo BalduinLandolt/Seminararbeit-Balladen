@@ -4,14 +4,11 @@ from Bio import AlignIO, Phylo
 from Bio.Phylo.TreeConstruction import *
 from Bio.Phylo.Consensus import *
 
+coding_path = os.path.dirname(__file__)
 
 def read_data():
     # read data from file
-    prev = ''
-    filepath = 'git/Seminararbeit-Balladen/Datenerhebung/spreadsheet.xlsx'
-    if not os.path.exists(filepath):
-        prev = filepath
-        filepath = '../Datenerhebung/spreadsheet.xlsx'
+    filepath = os.path.normpath(os.path.join(coding_path, '..', 'Datenerhebung', 'spreadsheet.xlsx'))
     if not os.path.exists(filepath):
         raise Exception(f'Could not find spreadsheet\n(checked: {[prev, filepath]})')
     data = pd.read_excel('git/Seminararbeit-Balladen/Datenerhebung/spreadsheet.xlsx', sheet_name='Sheet2', index_col=0)
@@ -111,7 +108,7 @@ def make_tree(path):
 
 def main():
     data = read_data()
-    nex = 'nexus.nex'
+    nex = os.path.join(coding_path, 'nexus.nex')
     save_as_nexus(nex, data)
     make_tree(nex)
 
