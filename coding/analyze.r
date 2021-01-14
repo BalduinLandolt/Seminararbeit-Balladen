@@ -47,52 +47,53 @@ wd <- getwd()
 new_wd <- file.path(wd, "out")
 setwd(new_wd)
 
+dev.new()
 plot_nj <- plot(nj, main = "NJ")
-dev.copy(png, filename = "nj_phyl.png")
+dev.copy(png, filename = "nj_phyl.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot_nj_bs <- plotBS(nj, bs_trees_nj, "phylogram", main = "NJ Bootstrap 200")
-dev.copy(png, filename = "nj_bs_phyl.png")
+dev.copy(png, filename = "nj_bs_phyl.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot <- plotBS(nj, bs_trees_nj, "unrooted",
                main = "NJ Bootstrap 200 (Unrooted)")
-dev.copy(png, filename = "nj_bs_unr.png")
+dev.copy(png, filename = "nj_bs_unr.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot <- plot(upgma, main = "UPGMA")
-dev.copy(png, filename = "upgma.png")
+dev.copy(png, filename = "upgma.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot <- plot(maxpars_nj, main = "NNI-Optimized NJ")
-dev.copy(png, filename = "nj_nni.png")
+dev.copy(png, filename = "nj_nni.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot <- plot(maxpars_upgma, main = "NNI-Optimized UPGMA")
-dev.copy(png, filename = "upgma_nni.png")
+dev.copy(png, filename = "upgma_nni.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot <- plot(nnet, "2D")
 title(main = "Neighbour Net")
-dev.copy(png, filename = "nnet.png")
+dev.copy(png, filename = "nnet.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot <- plot(consnet_nj, "2D")
 title(main = "NJ - Consensus Net (2D)")
-dev.copy(png, filename = "nj_cnet.png")
+dev.copy(png, filename = "nj_cnet.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
 plot <- plot(consnet_upgma, "2D")
 title(main = "UPGMA - Consensus Net (2D)")
-dev.copy(png, filename = "upgma_cnet.png")
+dev.copy(png, filename = "upgma_cnet.png", width = 800, height = 800)
 dev.off()
 
 
