@@ -10,9 +10,11 @@ if (!endsWith(getwd(), "coding")) {
 # read data from file
 d <- read.nexus.data("data/nexus.nex")
 phy <- phyDat(d, type = "USER",
-             levels = c("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "-"),
+             levels = c("0", "1", "2", "3", "4", "5", "6", "7", "8",
+                        "9", "a", "b", "c", "d", "e", "f", "-"),
              ambiguity = c("?"))
 
+print("Loaded Nexus data.")
 
 # Build trees
 # -----------
@@ -38,6 +40,8 @@ maxpars_upgma <- optim.parsimony(upgma, phy)
 # Neighbour net
 nnet <- neighborNet(pairwise_tree)
 
+
+print("Built Trees.")
 
 
 # Plot and save trees
@@ -95,6 +99,9 @@ plot <- plot(consnet_upgma, "2D")
 title(main = "UPGMA - Consensus Net (2D)")
 dev.copy(png, filename = "upgma_cnet.png", width = 800, height = 800)
 dev.off()
+
+
+print("Plotted and saved trees.")
 
 
 # save trees

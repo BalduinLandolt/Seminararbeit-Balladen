@@ -40,7 +40,7 @@ Format
 datatype=standard
 missing=?
 gap=-
-Symbols="0123456789";
+Symbols="0123456789abcdef";
 Matrix
 '''
 
