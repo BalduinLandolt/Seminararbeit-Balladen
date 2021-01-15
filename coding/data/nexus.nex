@@ -4,7 +4,7 @@ Dimensions ntax=22 nchar=43;
 Format
 datatype=standard
 missing=?
-gap=- [Definiert den Datentyp und Symbole für fehlende Daten (?) und gaps (-)]
+gap=-
 Symbols="0123456789";
 Matrix
 SMB_29_A____ 1111--1111-1-----11-1111-1-1--1--1---------

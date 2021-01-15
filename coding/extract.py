@@ -39,7 +39,7 @@ Dimensions '''
 Format
 datatype=standard
 missing=?
-gap=- [Definiert den Datentyp und Symbole für fehlende Daten (?) und gaps (-)]
+gap=-
 Symbols="0123456789";
 Matrix
 '''
