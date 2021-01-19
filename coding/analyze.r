@@ -52,52 +52,75 @@ new_wd <- file.path(wd, "out")
 setwd(new_wd)
 
 dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
 plot_nj <- plot(nj, main = "NJ")
 dev.copy(png, filename = "nj_phyl.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
 plot_nj_bs <- plotBS(nj, bs_trees_nj, "phylogram", main = "NJ Bootstrap 200")
 dev.copy(png, filename = "nj_bs_phyl.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
 plot <- plotBS(nj, bs_trees_nj, "unrooted",
                main = "NJ Bootstrap 200 (Unrooted)")
 dev.copy(png, filename = "nj_bs_unr.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
-plot <- plot(upgma, main = "UPGMA")
-dev.copy(png, filename = "upgma.png", width = 800, height = 800)
-dev.off()
-
-dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
 plot <- plot(maxpars_nj, main = "NNI-Optimized NJ")
 dev.copy(png, filename = "nj_nni.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
+plot <- plot(upgma, main = "UPGMA")
+dev.copy(png, filename = "upgma.png", width = 800, height = 800)
+dev.off()
+
+dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
+plot_nj_bs <- plotBS(upgma, bs_trees_upgma, "phylogram",
+                     main = "UPGMA Bootstrap 200")
+dev.copy(png, filename = "upgma_bs_phyl.png", width = 800, height = 800)
+dev.off()
+
+dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
+plot <- plotBS(upgma, bs_trees_upgma, "unrooted",
+               main = "UPGMA Bootstrap 200 (Unrooted)")
+dev.copy(png, filename = "upgma_bs_unr.png", width = 800, height = 800)
+dev.off()
+
+dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
 plot <- plot(maxpars_upgma, main = "NNI-Optimized UPGMA")
 dev.copy(png, filename = "upgma_nni.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
+plot <- plot(consnet_upgma, "2D")
+title(main = "UPGMA - Consensus Net (2D)")
+dev.copy(png, filename = "upgma_cnet.png", width = 800, height = 800)
+dev.off()
+
+dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
 plot <- plot(nnet, "2D")
 title(main = "Neighbour Net")
 dev.copy(png, filename = "nnet.png", width = 800, height = 800)
 dev.off()
 
 dev.new()
+par(mar = c(0.5, 0.5, 2.5, 0.5), bg = "#e6e6e6")
 plot <- plot(consnet_nj, "2D")
 title(main = "NJ - Consensus Net (2D)")
 dev.copy(png, filename = "nj_cnet.png", width = 800, height = 800)
-dev.off()
-
-dev.new()
-plot <- plot(consnet_upgma, "2D")
-title(main = "UPGMA - Consensus Net (2D)")
-dev.copy(png, filename = "upgma_cnet.png", width = 800, height = 800)
 dev.off()
 
 
